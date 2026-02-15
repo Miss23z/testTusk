@@ -17,7 +17,12 @@ class HouseFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => 'The '.fake()->lastName(),
+            'price' => fake()->randomFloat(2, 50000, 1500000),
+            'bedrooms' => fake()->numberBetween(1, 6),
+            'bathrooms' => fake()->numberBetween(1, 4),
+            'storeys' => fake()->numberBetween(1, 3),
+            'garages' => fake()->numberBetween(0, 3),
         ];
     }
 }
