@@ -21,7 +21,7 @@ return new class extends Migration
             $table->unsignedTinyInteger('garages');
             $table->timestamps();
 
-            $table->fullText('name'); // для полнотекстового поиска
+            $table->index('name'); // SQLite does not support full-text search.
             $table->index('price');
             $table->index('bedrooms');
             $table->index('bathrooms');
