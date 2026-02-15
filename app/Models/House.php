@@ -22,7 +22,7 @@ class House extends Model
     protected function casts(): array
     {
         return [
-            'price' => 'decimal:2',
+            'price' => 'float',
             'bedrooms' => 'integer',
             'bathrooms' => 'integer',
             'storeys' => 'integer',

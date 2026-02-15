@@ -11,10 +11,24 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    ElAlert: typeof import('element-plus/es')['ElAlert']
     ElAside: typeof import('element-plus/es')['ElAside']
+    ElButton: typeof import('element-plus/es')['ElButton']
     ElContainer: typeof import('element-plus/es')['ElContainer']
+    ElEmpty: typeof import('element-plus/es')['ElEmpty']
+    ElForm: typeof import('element-plus/es')['ElForm']
+    ElFormItem: typeof import('element-plus/es')['ElFormItem']
     ElHeader: typeof import('element-plus/es')['ElHeader']
+    ElIcon: typeof import('element-plus/es')['ElIcon']
+    ElInput: typeof import('element-plus/es')['ElInput']
+    ElInputNumber: typeof import('element-plus/es')['ElInputNumber']
     ElMain: typeof import('element-plus/es')['ElMain']
+    ElPagination: typeof import('element-plus/es')['ElPagination']
     ElSlider: typeof import('element-plus/es')['ElSlider']
+    ElTable: typeof import('element-plus/es')['ElTable']
+    ElTableColumn: typeof import('element-plus/es')['ElTableColumn']
+  }
+  export interface GlobalDirectives {
+    vLoading: typeof import('element-plus/es')['ElLoadingDirective']
   }
 }
