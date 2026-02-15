@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\HouseSearchRequest;
 use App\Models\House;
 use App\Pipelines\House\BathroomsPipe;
 use App\Pipelines\House\BedroomsPipe;
@@ -13,7 +14,7 @@ use Illuminate\Pipeline\Pipeline;
 
 class HouseController extends Controller
 {
-    public function index()
+    public function index(HouseSearchRequest $request)
     {
         return app(Pipeline::class)
             ->send(House::query())

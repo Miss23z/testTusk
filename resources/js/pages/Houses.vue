@@ -37,10 +37,16 @@ async function search(page = 1) {
         const response = await axios.get('/api/houses', { params });
         houses.value = response.data.data;
         total.value = response.data.total;
-    } catch {
+    } catch (e) {
         houses.value = [];
         total.value = 0;
-        error.value = 'Failed to load data. Please try again.';
+
+        if (axios.isAxiosError(e) && e.response?.status === 422) {
+            const messages = Object.values(e.response.data.errors).flat();
+            error.value = messages.join(', ');
+        } else {
+            error.value = 'Failed to load data. Please try again.';
+        }
     } finally {
         loading.value = false;
     }
